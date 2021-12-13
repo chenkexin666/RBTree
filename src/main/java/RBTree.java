@@ -55,7 +55,7 @@ public class RBTree<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * 设置当前节点为红色
+     * 设置当前节点为黑色
      */
     private void setBlack(RBNode<Key, Value> node) {
         if (null != node) {
@@ -185,7 +185,7 @@ public class RBTree<Key extends Comparable<Key>, Value> {
                     // 情景4.2.2：插入节点为其父节点的右子节点（LR情况），
                     // 以爸爸节点进行一次左旋，得到LL双红的情景（4.2.1）,然后再以爸爸节点为当前节点进行下一轮处理
                     if (node == parent.right) {
-                        rightRotate(parent);
+                        leftRotate(parent);
                         insertFixUp(parent);
                     }
                 }

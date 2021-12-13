@@ -4,12 +4,12 @@
  */
 public class TreeOperation {
 
-    public static int getTreeDepth(RBNode<String, Object> root) {
+    public static int getTreeDepth(RBNode<Integer, Object> root) {
         return root == null ? 0 : (1 + Math.max(getTreeDepth(root.getLeft()), getTreeDepth(root.getRight())));
 
     }
 
-    private static void writeArray(RBNode<String, Object> currNode, int rowIndex, int columnIndex, String[][] res, int treeDepth) {
+    private static void writeArray(RBNode<Integer, Object> currNode, int rowIndex, int columnIndex, String[][] res, int treeDepth) {
         // 保证输入的树不为空
 
         if (currNode == null) return;
@@ -50,7 +50,7 @@ public class TreeOperation {
 
     }
 
-    public static void show(RBNode<String, Object> root) {
+    public static void show(RBNode<Integer, Object> root) {
         if (root == null) System.out.println("EMPTY!");
 
         // 得到树的深度
